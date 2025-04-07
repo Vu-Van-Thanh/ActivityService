@@ -1,0 +1,26 @@
+[
+    {
+        "PaymentId": "619108BA-C4B0-4048-83F0-08EE020E3522",
+        "BaseId": "489584D4-A3D1-4C48-8158-B9AF4B333B72",
+        "NetSalary": 5000.00,
+        "PaymentDate": "2025-04-15T14:30:00",
+        "CreatedAt": "2025-04-01T10:00:00",
+        "Status": "Completed"
+    },
+    {
+        "PaymentId": "5DB0350D-CB9E-4A4A-881F-9CF527409D1B",
+        "BaseId": "489584D4-A3D1-4C48-8158-B9AF4B333B72",
+        "NetSalary": 6500.00,
+        "PaymentDate": "2025-04-20T10:00:00",
+        "CreatedAt": "2025-04-10T11:00:00",
+        "Status": "Pending"
+    },
+    {
+        "PaymentId": "989DA216-7191-4726-8964-8B3C463A9C27",
+        "BaseId": "7CDB241D-7D1E-4864-A490-33177335EB0D",
+        "NetSalary": 4700.00,
+        "PaymentDate": "2025-05-01T09:30:00",
+        "CreatedAt": "2025-04-15T15:00:00",
+        "Status": "Completed"
+    }
+]
