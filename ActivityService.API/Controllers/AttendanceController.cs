@@ -17,7 +17,6 @@ namespace PayrollService.API.Controllers
         }
 
 
-        // Lấy tất cả SalaryPayment dưới dạng DTO
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -25,7 +24,6 @@ namespace PayrollService.API.Controllers
             return Ok(result);
         }
 
-        // Lấy SalaryPayment theo ID dưới dạng DTO
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(Guid id)
         {
@@ -38,7 +36,6 @@ namespace PayrollService.API.Controllers
             return Ok(result);
         }
 
-        // Thêm hoặc cập nhật SalaryPayment
         [HttpPost]
         public async Task<IActionResult> Upsert(AttendanceDTO dto)
         {
@@ -46,7 +43,6 @@ namespace PayrollService.API.Controllers
             return Ok(result);
         }
 
-        // Xóa SalaryPayment
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {

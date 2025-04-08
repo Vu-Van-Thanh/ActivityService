@@ -6,17 +6,16 @@ namespace PayrollService.API.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class ActivityRequest : ControllerBase
+    public class ActivityRequestController : ControllerBase
     {
         private readonly IActivityRequestService _activityRequestService;
 
-        public ActivityRequest(IActivityRequestService activityRequestService)
+        public ActivityRequestController(IActivityRequestService activityRequestService)
         {
             _activityRequestService = activityRequestService;
         }
 
 
-        // Lấy tất cả SalaryBase dưới dạng DTO
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -24,7 +23,6 @@ namespace PayrollService.API.Controllers
             return Ok(result);
         }
 
-        // Lấy SalaryBase theo ID dưới dạng DTO
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(Guid id)
         {
@@ -37,7 +35,6 @@ namespace PayrollService.API.Controllers
             return Ok(result);
         }
 
-        // Thêm hoặc cập nhật SalaryBase
         [HttpPost]
         public async Task<IActionResult> Upsert(ActivityRequestDTO dto)
         {
@@ -45,7 +42,6 @@ namespace PayrollService.API.Controllers
             return Ok(result);
         }
 
-        // Xóa SalaryBase
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {
