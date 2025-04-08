@@ -1,4 +1,4 @@
-using PayrollServiceRegistry;
+using ActivityServiceRegistry;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +13,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Payroll Service API v1");
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Activity Service API v1");
         c.RoutePrefix = "swagger";
     });
 }

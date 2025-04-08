@@ -1,27 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using ActivityService.Core.Domain.Entities;
+using ActivityService.Core.DTO;
 using AutoMapper;
-using PayrollService.Core.Domain.Entities;
-using PayrollService.Core.DTO;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace PayrollService.Core.Extensions
+
+namespace ActivityService.Core.Extensions
 {
     public class MappingProfile : Profile
     {
         public MappingProfile()
         {
-            CreateMap<SalaryBase, SalaryBaseDTO>();
-            CreateMap<SalaryBaseDTO, SalaryBase>();
-            CreateMap<SalaryHist, ActivityRequest>();
-            CreateMap<ActivityRequest, SalaryHist>();
-            CreateMap<SalaryAdjustment, SalaryAdjustmentDTO>();
-            CreateMap<SalaryAdjustmentDTO, SalaryAdjustment>();
-            CreateMap<SalaryPayment, DTO.AttendanceDTO>();
-            CreateMap<DTO.AttendanceDTO, SalaryPayment>();
+            CreateMap<ActivityFld, ActivityFldDTO>();
+            CreateMap<ActivityFldDTO, ActivityFld>();
+            CreateMap<Activity, ActivityDTO>();
+            CreateMap<ActivityDTO, Activity>();
+            CreateMap<ActivityRequest, ActivityRequestDTO>();
+            CreateMap<ActivityRequestDTO, ActivityRequest>();
+            CreateMap<Attendance, AttendanceDTO>();
+            CreateMap<AttendanceDTO, Attendance>();
 
         }
     }

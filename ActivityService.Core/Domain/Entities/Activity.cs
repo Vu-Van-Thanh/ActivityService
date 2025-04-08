@@ -1,6 +1,4 @@
-﻿
-using PayrollService.Core.Domain.Entities;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ActivityService.Core.Domain.Entities
 {

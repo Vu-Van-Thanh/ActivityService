@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq.Expressions;
 using AutoMapper;
-using PayrollService.Core.RepositoryContracts;
+using ActivityService.Core.RepositoryContracts;
 
-namespace PayrollService.Core.Services.CommonServiceContract
+namespace ActivityService.Core.Services.CommonServiceContract
 {
     public class Service<T, TDto> : IService<T, TDto> where T : class
     {

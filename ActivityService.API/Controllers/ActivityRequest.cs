@@ -1,20 +1,18 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using PayrollService.Core.Domain.Entities;
-using PayrollService.Core.DTO;
-using PayrollService.Core.Services.CommonServiceContract;
-using PayrollService.Core.Services.SeparateService;
+﻿using ActivityService.Core.DTO;
+using ActivityService.Core.Services.SeparateService;
+using Microsoft.AspNetCore.Mvc;
 
 namespace PayrollService.API.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class SalaryBaseController : ControllerBase
+    public class ActivityRequest : ControllerBase
     {
-        private readonly ISalaryBaseService _salaryBaseService;
+        private readonly IActivityRequestService _activityRequestService;
 
-        public SalaryBaseController(ISalaryBaseService salaryBaseService)
+        public ActivityRequest(IActivityRequestService activityRequestService)
         {
-            _salaryBaseService = salaryBaseService;
+            _activityRequestService = activityRequestService;
         }
 
 
@@ -22,7 +20,7 @@ namespace PayrollService.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var result = await _salaryBaseService.GetAllAsync();
+            var result = await _activityRequestService.GetAllAsync();
             return Ok(result);
         }
 
@@ -30,7 +28,7 @@ namespace PayrollService.API.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(Guid id)
         {
-            var result = await _salaryBaseService.GetByIdAsync(id);
+            var result = await _activityRequestService.GetByIdAsync(id);
             if (result == null)
             {
                 return NotFound();
@@ -41,9 +39,9 @@ namespace PayrollService.API.Controllers
 
         // Thêm hoặc cập nhật SalaryBase
         [HttpPost]
-        public async Task<IActionResult> Upsert(SalaryBaseDTO dto)
+        public async Task<IActionResult> Upsert(ActivityRequestDTO dto)
         {
-            var result = await _salaryBaseService.UpsertAsync(dto, s => s.SalaryId == dto.SalaryId);
+            var result = await _activityRequestService.UpsertAsync(dto, s => s.RequestId == dto.RequestId);
             return Ok(result);
         }
 
@@ -51,7 +49,7 @@ namespace PayrollService.API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {
-            await _salaryBaseService.DeleteAsync(id);
+            await _activityRequestService.DeleteAsync(id);
             return NoContent();
         }
     }

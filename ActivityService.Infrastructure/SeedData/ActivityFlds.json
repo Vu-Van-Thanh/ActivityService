@@ -1,0 +1,20 @@
+[
+    {
+        "FieldId": "4F4A1B2A-6573-4F10-B80D-63B288A865EF",
+        "ActivityId": "8B74E7D6-C7AC-4286-8510-DD8A20AA5656",
+        "FieldType": "String",
+        "FieldName": "Lý do"
+    },
+    {
+        "FieldId": "BFCC713C-FA7F-4794-A11C-2548506504C2",
+        "ActivityId": "8B74E7D6-C7AC-4286-8510-DD8A20AA5656",
+        "FieldType": "Datetime",
+        "FieldName": "Ngày nghỉ"
+    },
+    {
+        "FieldId": "A397A21F-A317-4573-B7C5-AA80C54CF005",
+        "ActivityId": "31F31DC7-4656-4819-B375-BAE80AD5E5A6",
+        "FieldType": "String",
+        "FieldName": "Lý do"
+    }
+]

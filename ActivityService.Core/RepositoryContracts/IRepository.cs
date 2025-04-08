@@ -1,9 +1,8 @@
-using System.Collections.Generic;
-using System.Linq.Expressions;
-using System.Threading.Tasks;
-using System;
 
-namespace PayrollService.Core.RepositoryContracts
+using System.Linq.Expressions;
+
+
+namespace ActivityService.Core.RepositoryContracts
 {
     public interface IRepository<T> where T : class
     {

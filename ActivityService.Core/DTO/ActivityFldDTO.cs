@@ -2,7 +2,7 @@
 
 namespace ActivityService.Core.DTO
 {
-    public class ActivityFld
+    public class ActivityFldDTO
     {
         public Guid FieldId { get; set; }
         public Guid ActivityId { get; set; }

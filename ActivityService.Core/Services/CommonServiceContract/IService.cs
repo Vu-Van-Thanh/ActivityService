@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PayrollService.Core.Services.CommonServiceContract
+
+namespace ActivityService.Core.Services.CommonServiceContract
 {
     public interface IService<T, TDto> where T : class
     {

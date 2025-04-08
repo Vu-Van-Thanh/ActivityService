@@ -1,17 +1,16 @@
-﻿
-using DepartmentService.API.Repositories;
+﻿using ActivityService.API.Repositories;
+using ActivityService.Core.Extensions;
+using ActivityService.Core.RepositoryContracts;
+using ActivityService.Core.RepositoryContracts.SeparateRepository;
+using ActivityService.Core.Services.CommonServiceContract;
+using ActivityService.Core.Services.SeparateService;
+using ActivityService.Infrastructure.AppDbContext;
+using ActivityService.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using PayrollService.Core.Extensions;
-using PayrollService.Core.RepositoryContracts;
-using PayrollService.Core.RepositoryContracts.SeparateRepository;
-using PayrollService.Core.Services.CommonServiceContract;
-using PayrollService.Core.Services.PaymentService;
-using PayrollService.Core.Services.SeparateService;
-using PayrollService.Infrastructure.AppDbContext;
-using PayrollService.Infrastructure.Repositories;
 
-namespace PayrollServiceRegistry
+
+namespace ActivityServiceRegistry
 {
     public static class ConfigureServicesExtension
     {
@@ -29,22 +28,21 @@ namespace PayrollServiceRegistry
             services.AddAutoMapper(typeof(MappingProfile));
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped(typeof(IService<,>), typeof(Service<,>));
-            services.AddScoped<ISalaryAdjustmentRepository, SalaryAdjustmentRepository>();
-            services.AddScoped<ISalariesBaseRepository, SalaryBaseRepository>();
-            services.AddScoped<ISalaryHistRepository, SalaryHistRepository>();
-            services.AddScoped<ISalaryPaymentRepository, SalaryPaymentRepository>();
-            services.AddScoped<ISalaryPaymentRepository, SalaryPaymentRepository>();
-            services.AddScoped<ISalaryPaymentService, SalaryPaymentService>();
-            services.AddScoped<ISalaryAdjustmentService, SalaryAdjustmentService>();
-            services.AddScoped<ISalaryBaseService, SalaryBaseService>();
-            services.AddScoped<ISalaryHistService, SalaryHistService>();
+            services.AddScoped<IActivityRepository, ActivityRepository>();
+            services.AddScoped<IActivityFldRepository, ActivityFldRepository>();
+            services.AddScoped<IActivityRequestRepository, ActivityRequestRepository>();
+            services.AddScoped<IAttendanceRepository, AttendanceRepository>();
+            services.AddScoped<IActivityService, ActivitiesService>();
+            services.AddScoped<IActivityFldService, ActivityFldService>();
+            services.AddScoped<IActivityRequestService, ActivityRequestService>();
+            services.AddScoped<IAttendanceService, AttendanceService>();
             // cấu hình swagger
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Title = "Payroll API",
+                    Title = "Activity API",
                     Version = "v1",
                     Description = "API quản lý người dùng trong hệ thống microservices",
                     Contact = new OpenApiContact
@@ -56,7 +54,6 @@ namespace PayrollServiceRegistry
                 });
      
             });
-            services.AddScoped<IVnPayService, VnPayService>();
 
             return services;
         }

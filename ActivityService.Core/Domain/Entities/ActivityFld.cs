@@ -1,14 +1,7 @@
-﻿using ActivityService.Core.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace PayrollService.Core.Domain.Entities
+namespace ActivityService.Core.Domain.Entities
 {
     public class ActivityFld
     {

@@ -1,0 +1,26 @@
+[
+    {
+        "AttendanceId": "21CA0654-8F04-4684-856D-B2159AADD423",
+        "EmployeeId": "63E29A28-BC90-4CD1-8F9E-AB9834BDDE6C",
+        "AttendanceDate": "2025-04-08",
+        "Starttime": "2025-04-08T08:00:00",
+        "Endtime": "2025-04-08T17:00:00",
+        "Status": "Present",
+        "Position": "Backend Developer",
+        "Description": "Worked on authentication module",
+        "ActivityId": "B4613AF0-AF0A-4884-83A5-A56DE96A2FBF",
+        "ProjectId": "550e8400-e29b-41d4-a716-446655440000"
+    },
+    {
+        "AttendanceId": "68ED2AE8-56F0-49FD-98E6-B77934485BFF",
+        "EmployeeId": "D05780D4-5742-40CA-8403-0FEBD44B1555",
+        "AttendanceDate": "2025-04-08",
+        "Starttime": "2025-04-08T09:00:00",
+        "Endtime": "2025-04-08T12:00:00",
+        "Status": "Half-day",
+        "Position": "Scrum Master",
+        "Description": "Attended team meeting",
+        "ActivityId": "B4613AF0-AF0A-4884-83A5-A56DE96A2FBF",
+        "ProjectId": "550e8400-e29b-41d4-a716-446655440000"
+    }
+]

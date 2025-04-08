@@ -1,0 +1,22 @@
+[
+    {
+        "ActivityId": "8B74E7D6-C7AC-4286-8510-DD8A20AA5656",
+        "ActivityDescription": "Nghỉ phép cá nhân",
+        "ActivityType": "Leave"
+    },
+    {
+        "ActivityId": "31F31DC7-4656-4819-B375-BAE80AD5E5A6",
+        "ActivityDescription": "Làm việc từ xa",
+        "ActivityType": "Remote"
+    },
+    {
+        "ActivityId": "89F25521-255D-4E1D-BE1F-DF31EC947F20",
+        "ActivityDescription": "Book phòng họp",
+        "ActivityType": "Meeting"
+    },
+    {
+        "ActivityId": "B4613AF0-AF0A-4884-83A5-A56DE96A2FBF",
+        "ActivityDescription": "Chấm công",
+        "ActivityType": "Attendance"
+    }
+]

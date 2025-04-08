@@ -1,11 +1,10 @@
-using Microsoft.EntityFrameworkCore;
-using PayrollService.Core.RepositoryContracts;
-using PayrollService.Infrastructure.AppDbContext;
-using System;
 using System.Linq.Expressions;
-using System.Threading.Tasks;
+using ActivityService.Core.RepositoryContracts;
+using ActivityService.Infrastructure.AppDbContext;
+using Microsoft.EntityFrameworkCore;
 
-namespace DepartmentService.API.Repositories
+
+namespace ActivityService.API.Repositories
 {
     public class Repository<T> : IRepository<T> where T : class
     {
