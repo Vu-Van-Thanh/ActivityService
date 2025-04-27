@@ -1,10 +1,13 @@
-﻿using ActivityService.API.Repositories;
+﻿using ActivityService.API.Kafka.Producer;
+using ActivityService.API.Repositories;
+using ActivityService.Core.DTO;
 using ActivityService.Core.Extensions;
 using ActivityService.Core.RepositoryContracts;
 using ActivityService.Core.RepositoryContracts.SeparateRepository;
 using ActivityService.Core.Services.CommonServiceContract;
 using ActivityService.Core.Services.SeparateService;
 using ActivityService.Infrastructure.AppDbContext;
+using ActivityService.Infrastructure.Kafka.Handlers;
 using ActivityService.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
@@ -36,6 +39,8 @@ namespace ActivityServiceRegistry
             services.AddScoped<IActivityFldService, ActivityFldService>();
             services.AddScoped<IActivityRequestService, ActivityRequestService>();
             services.AddScoped<IAttendanceService, AttendanceService>();
+            services.AddScoped<IKafkaHandler<KafkaRequest<AttendaceFilterDTO>>, GetAttendaceHandler>();
+            services.AddScoped<IEventProducer, ActivityProducer>();
             // cấu hình swagger
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen(options =>

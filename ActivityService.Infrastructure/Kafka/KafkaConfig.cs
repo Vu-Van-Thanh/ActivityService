@@ -1,0 +1,12 @@
+﻿
+
+namespace ActivityService.Infrastructure.Kafka
+{
+    public class KafkaSettings
+    {
+        public string BootstrapServers { get; set; }
+        public string GroupId { get; set; }
+        public Dictionary<string, List<string>> ConsumeTopicNames { get; set; }
+        public Dictionary<string, string> ProducerTopicNames { get; set; }
+    }
+}
