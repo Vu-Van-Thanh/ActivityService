@@ -71,8 +71,8 @@ namespace EmployeeService.Infrastructure.Kafka.Consumers
                 switch (topic)
                 {
                     case "attendance-list":
-                        var importHandler = scope.ServiceProvider.GetRequiredService<IKafkaHandler<AttendaceFilterDTO>>();
-                        var importData = JsonSerializer.Deserialize<AttendaceFilterDTO>(message);
+                        var importHandler = scope.ServiceProvider.GetRequiredService<IKafkaHandler<KafkaRequest<AttendaceFilterDTO>>>();
+                        var importData = JsonSerializer.Deserialize<KafkaRequest<AttendaceFilterDTO>>(message);
                         await importHandler.HandleAsync(importData);
                         break;
 
