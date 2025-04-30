@@ -1,4 +1,4 @@
-﻿namespace ActivityService.API.Kafka.Producer
+﻿namespace ActivityService.Infrastructure.Kafka.Producers
 {
     public interface IEventProducer
     {

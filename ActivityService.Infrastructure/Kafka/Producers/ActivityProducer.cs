@@ -3,7 +3,7 @@ using ActivityService.Infrastructure.Kafka;
 using Microsoft.Extensions.Options;
 using System.Text.Json;
 
-namespace ActivityService.API.Kafka.Producer
+namespace ActivityService.Infrastructure.Kafka.Producers
 {
     public class ActivityProducer : IEventProducer
     {
