@@ -1,5 +1,5 @@
 ﻿
-using ActivityService.API.Kafka.Producer;
+using ActivityService.Infrastructure.Kafka.Producers;
 using ActivityService.Core.Domain.Entities;
 using ActivityService.Core.DTO;
 using ActivityService.Core.RepositoryContracts.SeparateRepository;
