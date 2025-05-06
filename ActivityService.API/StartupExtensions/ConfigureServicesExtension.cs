@@ -11,6 +11,8 @@ using ActivityService.Infrastructure.Kafka.Handlers;
 using ActivityService.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using EmployeeService.Infrastructure.Kafka.Consumers;
+using ActivityService.Infrastructure.Kafka;
 
 
 namespace ActivityServiceRegistry
@@ -41,6 +43,8 @@ namespace ActivityServiceRegistry
             services.AddScoped<IAttendanceService, AttendanceService>();
             services.AddScoped<IKafkaHandler<KafkaRequest<AttendaceFilterDTO>>, GetAttendaceHandler>();
             services.AddScoped<IEventProducer, ActivityProducer>();
+            services.AddHostedService<ActivityConsumer>();
+            services.Configure<KafkaSettings>(configuration.GetSection("Kafka"));
             // cấu hình swagger
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen(options =>
