@@ -24,6 +24,13 @@ namespace PayrollService.API.Controllers
             return Ok(result);
         }
 
+        [HttpGet("filter-attendance")]
+        public async Task<IActionResult> GetAll([FromQuery] AttendaceFilterDTO filter)
+        {
+            var result = await _attendanceService.GetAttendaceByFilter(filter.ToExpression());
+            return Ok(result);
+        }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(Guid id)
         {
