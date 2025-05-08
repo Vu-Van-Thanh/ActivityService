@@ -23,6 +23,13 @@ namespace PayrollService.API.Controllers
             return Ok(result);
         }
 
+        [HttpGet("activity-request")]
+        public async Task<IActionResult> GetByFilter([FromQuery] ActivityFilter filter)
+        {
+            var result = await _activityRequestService.GetByFilterAsync(filter);
+            return Ok(result);
+            }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(Guid id)
         {

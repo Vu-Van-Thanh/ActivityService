@@ -4,6 +4,8 @@
         "EmployeeId": "63E29A28-BC90-4CD1-8F9E-AB9834BDDE6C",
         "ActivityId": "31F31DC7-4656-4819-B375-BAE80AD5E5A6",
         "CreatedAt": "2025-04-08T09:00:00",
+        "StartTime": "2025-04-08T10:00:00",
+        "EndTime": "2025-04-08T11:00:00",
         "Status": "Pending",
         "RequestFlds": "{\"TaskName\":\"Implement JWT\",\"EstimatedHours\":8}"
     },
@@ -11,7 +13,9 @@
         "RequestId": "6D6609F9-00DB-4024-BB44-DDE901D6DD2A",
         "EmployeeId": "D05780D4-5742-40CA-8403-0FEBD44B1555",
         "ActivityId": "89F25521-255D-4E1D-BE1F-DF31EC947F20",
-        "CreatedAt": "2025-04-08T14:30:00",
+      "CreatedAt": "2025-04-08T14:30:00",
+      "StartTime": "2025-04-08T15:00:00",
+        "EndTime": "2025-04-08T16:00:00",
         "Status": "Approved",
         "RequestFlds": "{\"MeetingRoom\":\"Room 402\"}"
     }

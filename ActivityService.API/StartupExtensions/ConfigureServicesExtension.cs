@@ -43,7 +43,7 @@ namespace ActivityServiceRegistry
             services.AddScoped<IAttendanceService, AttendanceService>();
             services.AddScoped<IKafkaHandler<KafkaRequest<AttendaceFilterDTO>>, GetAttendaceHandler>();
             services.AddScoped<IEventProducer, ActivityProducer>();
-            services.AddHostedService<ActivityConsumer>();
+            //services.AddHostedService<ActivityConsumer>();
             services.Configure<KafkaSettings>(configuration.GetSection("Kafka"));
             // cấu hình swagger
             services.AddEndpointsApiExplorer();
@@ -62,6 +62,16 @@ namespace ActivityServiceRegistry
                     }
                 });
      
+            });
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllOrigins",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                            .AllowAnyMethod()
+                            .AllowAnyHeader();
+                    });
             });
 
             return services;
