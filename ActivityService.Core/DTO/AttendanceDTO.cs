@@ -5,8 +5,8 @@ namespace ActivityService.Core.DTO
 {
     public class AttendanceDTO
     {
-        public Guid AttendanceId { get; set; }
-        public Guid EmployeeId { get; set; }
+        public Guid? AttendanceId { get; set; }
+        public Guid? EmployeeId { get; set; }
         public DateTime AttendanceDate { get; set; }
         public DateTime Starttime { get; set; }
         public DateTime Endtime { get; set; }
@@ -14,8 +14,8 @@ namespace ActivityService.Core.DTO
         public string? Status { get; set; }
         public string? Position { get; set; }
         public string? Description { get; set; }
-        public Guid ActivityId { get; set; }
-        public Guid ProjectId { get; set; }
+        public Guid? ActivityId { get; set; } = Guid.Parse("B4613AF0-AF0A-4884-83A5-A56DE96A2FBF");
+        public Guid? ProjectId { get; set; }
 
     }
 

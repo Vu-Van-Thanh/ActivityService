@@ -14,6 +14,7 @@ namespace ActivityService.Core.DTO
         public string? Position { get; set; }
         public string? EmployeeIDList { get; set; }
 
+        public string? Status { get; set; } 
         
         public Expression<Func<Attendance, bool>> ToExpression()
         {
@@ -35,7 +36,8 @@ namespace ActivityService.Core.DTO
                 (!Endtime.HasValue || attendance.Endtime <= Endtime.Value) &&
                 (!ProjectId.HasValue || attendance.ProjectId == ProjectId.Value) &&
                 (string.IsNullOrEmpty(Position) || attendance.Position == Position) &&
-                (employeeGuids.Count == 0 || employeeGuids.Contains(attendance.EmployeeId));
+                (employeeGuids.Count == 0 || employeeGuids.Contains(attendance.EmployeeId)) &&
+                (string.IsNullOrEmpty(Status) || attendance.Status == Status);
         }
     }
 }
