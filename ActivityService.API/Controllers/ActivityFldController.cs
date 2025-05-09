@@ -36,7 +36,7 @@ namespace PayrollService.API.Controllers
             return Ok(result);
         }
 
-        [HttpGet("/activities/{activityId}/fields")]
+        [HttpGet("/activities/fields")]
         public async Task<IActionResult> GetFieldsByActivityId(Guid activityId)
         {
             var result = await _activityFldService.FindAsync(s => s.ActivityId == activityId);
