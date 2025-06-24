@@ -31,30 +31,55 @@ namespace ActivityService.API.Repositories
         {
             return await _dbSet.Where(predicate).ToListAsync();
         }
-
         public async Task<T> UpsertAsync(T entity, Expression<Func<T, bool>> predicate)
         {
             var existingEntity = await _dbSet.FirstOrDefaultAsync(predicate);
 
             if (existingEntity == null)
             {
-                await _dbSet.AddAsync(entity); 
+                await _dbSet.AddAsync(entity);
             }
             else
             {
-                _context.Entry(existingEntity).CurrentValues.SetValues(entity); 
-                entity = existingEntity; 
+                var entry = _context.Entry(existingEntity);
+                var entityEntry = _context.Entry(entity);
+
+                foreach (var property in entry.OriginalValues.Properties)
+                {
+                    var newValue = entityEntry.Property(property.Name).CurrentValue;
+
+                    if (newValue != null && !IsDefaultValue(newValue))
+                    {
+                        entry.Property(property.Name).CurrentValue = newValue;
+                    }
+
+                }
+
+                entity = existingEntity;
             }
 
             await _context.SaveChangesAsync();
-            return entity; 
+            return entity;
         }
-
 
         public async Task Delete(T entity)
         {
             _dbSet.Remove(entity);
             await _context.SaveChangesAsync();
+        }
+
+        private bool IsDefaultValue(object value)
+        {
+            if (value == null) return true;
+
+            var type = value.GetType();
+
+            if (type.IsValueType)
+            {
+                return value.Equals(Activator.CreateInstance(type));
+            }
+
+            return false;
         }
 
     }

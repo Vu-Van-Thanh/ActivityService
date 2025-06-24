@@ -7,9 +7,9 @@ namespace ActivityService.Core.DTO
     {
         public Guid? AttendanceId { get; set; }
         public Guid? EmployeeId { get; set; }
-        public DateTime AttendanceDate { get; set; }
-        public DateTime Starttime { get; set; }
-        public DateTime Endtime { get; set; }
+        public DateTime? AttendanceDate { get; set; }
+        public DateTime? Starttime { get; set; }
+        public DateTime? Endtime { get; set; }
 
         public string? Status { get; set; }
         public string? Position { get; set; }
