@@ -32,8 +32,8 @@ namespace ActivityService.Core.DTO
             return attendance =>
                 (!StartDate.HasValue || attendance.AttendanceDate.Date >= StartDate.Value.Date) &&
                 (!EndDate.HasValue || attendance.AttendanceDate.Date <= EndDate.Value.Date) &&
-                (!Starttime.HasValue || attendance.Starttime >= Starttime.Value) &&
-                (!Endtime.HasValue || attendance.Endtime <= Endtime.Value) &&
+                (!Starttime.HasValue || attendance.Starttime.TimeOfDay >= Starttime.Value.TimeOfDay) &&
+                 (!Endtime.HasValue || attendance.Endtime.TimeOfDay <= Endtime.Value.TimeOfDay) &&
                 (!ProjectId.HasValue || attendance.ProjectId == ProjectId.Value) &&
                 (string.IsNullOrEmpty(Position) || attendance.Position == Position) &&
                 (employeeGuids.Count == 0 || employeeGuids.Contains(attendance.EmployeeId)) &&
